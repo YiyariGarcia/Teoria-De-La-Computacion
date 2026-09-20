@@ -1,5 +1,5 @@
 # Teoria De La Computacion
-Repositorio para la materia de Teoria de la Computacion
+**Repositorio para la materia de Teoria de la Computacion**
 
 Francisco Yiyari Garcia Velazquez
 2023630113
@@ -9,7 +9,7 @@ Teoria De La Computacion
 Gabriel Hurtado Aviles
 22 de Septiembre 2026
 
-INDICE
+**INDICE**
 1. Ejercicio 1. Entorno de trabajo: control de versiones y contenedores.
    * Parte A. Investigacion
    * Parte B. Repositorio
