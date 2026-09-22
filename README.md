@@ -1,12 +1,12 @@
 # Teoria De La Computacion
 **Repositorio para la materia de Teoria de la Computacion**
 
-Francisco Yiyari Garcia Velazquez
-2023630113
-4CV4
-Ing. en sistemas computacionales
-Teoria De La Computacion
-Gabriel Hurtado Aviles
+Francisco Yiyari Garcia Velazquez  
+2023630113  
+4CV4  
+Ing. en sistemas computacionales  
+Teoria De La Computacion  
+Gabriel Hurtado Aviles  
 22 de Septiembre 2026
 
 **INDICE**
