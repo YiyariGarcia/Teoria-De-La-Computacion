@@ -83,13 +83,13 @@
        * **Clase NP (Polinomial No Determinista):** Problemas cuyas soluciones son dificiles de encontrar, pero una vez dadas, son "faciles" de verificar en tiempo polinomial.  
        * **El Problema del Milenio (P vs NP):** ¿Es acaso P = NP? (Es decir, ¿todo problema cuya solucion se puede verificar rapidamente tambien se puede resolver rapidamente?).  
 
-4. **Alfabeto, cadena y lenguaje, con sus definiciones formales. Las operaciones sobre cadenas y sobre lenguajes: concatenacion, potencia, reflexion, union, interseccion, diferencia, cerradura de Kleene y cerradura positiva. Explique porque Sigma^0 = {lambda} y que distingue a Sigma^ de Sigma^+**  
+4. **Alfabeto, cadena y lenguaje, con sus definiciones formales. Las operaciones sobre cadenas y sobre lenguajes: concatenacion, potencia, reflexion, union, interseccion, diferencia, cerradura de Kleene y cerradura positiva. Explique porque $\Sigma^0$ = $\lambda$ y que distingue a $\Sigma^*$  de  $\Sigma^+$**  
     * **Alfabeto:** Conjunto finito y no vacio de simbolos abstractos.  
     * **Cadena:** Secuencia finita de simbolos seleccionados a partir de un alfabeto. Su longitud corresponde al numero total de simbolos que la integran. La cadena vacia es la secuencia que no contiene ningun simbolo y cuya longitud es cero.  
     * **Lenguaje:** Conjunto de cadenas compuestas por simbolos de un determinado alfabeto. Un lenguaje puede ser finito, infinito o vacio.  
 
     **Operaciones sobre Cadenas**
-    * **Concatenacion:** Operacion que une a dos cadenas en orden, colocando lkos simbolos de la segunda inmediatamente despues de los simbolos de la primera.  
+    * **Concatenacion:** Operacion que une a dos cadenas en orden, colocando los simbolos de la segunda inmediatamente despues de los simbolos de la primera.  
     * **Potencia:** Repeticion y concatenacion secuencial de una cadena consigo misma una cantidad determinada de veces. La potencia cero de cualquier cadena siempre produce la cadena vacia.  
     * **La Reflexion:** Conjunto formado por la version invertida de cada una de lkas cadenas que pertenece al lenguaje original.  
     * **Union:** Conjunto de las cadenas que estan pertenecen al primer lenguaje, al segundo lenguaje o a ambos.  
@@ -99,7 +99,46 @@
     * **Cerradura positiva:** Conjunto formado por la union de todas las potencias de un lenguaje solo que sin incluir la cadena vacia.  
 
     **Explicaciones de Propiedades**  
-    * **¿Porque Sigma^0 = {lambda}?**  
+    * **¿Porque $\Sigma^0$ = $\lambda$?**  
     Porque la potencia cero representa la cadena vacia.  
-    * **¿Que distingue a Sigma^( * ) de Sigma+?**  
+    * **¿Que distingue a $\Sigma^*$  de  $\Sigma^+$?**  
     Son equivalentes, lo unio que las distingue es que a la Cerradura de Kleene contiene la cadena vacia, mientra que la Cerradura positiva no contiene la cadena vacia.
+
+5. **La jerarquia de Chomsky, presentada en una tabla, con los cuatro tipos, la gramatica que genera cada nivel y la maquina que lo reconoce.**
+
+    * La jerarquia de Chomsky clasifica los lenguajes formales en cuatro niveles inclusivos, donde cada tipo es un subconjunto escrito del nivel superior.  
+
+<div align = "center">
+
+| Nivel | Tipo de Lenguaje | Gramatica | Maquina que lo reconoce |  
+| :--- | :--- | :--- | :--- |  
+| **Tipo 0** | Recursivamente enumerables | Sin restricciones | Maquina de Turing |  
+| **Tipo 1** | Sensible al contexto | Sensible al contexto (Dependiente) | Automata linealmente acotado |  
+| **Tipo 2** | Libre de contexto | Libre de contexto (Independiente) | Automata de pila |  
+| **Tipo 3** | Regular | Regular | Automata finito (AFD / AFND) |  
+
+</div>
+
+6. **Automatas finitos y expresiones regulares: la definicion formal del AFD y del AFN, su equivalencia, y tres problemas reales en los que se apliquen las expresiones regulares.**
+
+    * Un **Automata Finito Determinista (AFD)** se define formalmente como una quintupla $M=(Q,\Sigma,\delta,q_0,F)$ donde:
+       * $Q$ : Es un conjunto finito de estados.
+       * $\Sigma$ : Es un alfabeto finito de simbolos de entrada.
+       * $\delta$ : Es la funcion de transicion, definida como $\delta:Q \times \Sigma \rightarrow Q$. Para cada estado y simbolo, hay exactamente una transicion a un siguiente estado.
+       * $q_0$ : Es el estado inicial, donde $q_0 \in Q$.
+       * $F$ : Es el conjunto de estados de aceptacion o finales, donde $F \subseteq Q$.
+    * Un **Automata Finito No Determinista (AFND)** se define con la misma estructura $M=(Q,\Sigma,\delta,q_0,F)$, pero la diferencia fundamental radica en su función de transición:
+       * : Se define como $\delta:Q \times (\Sigma \cup \{\epsilon\}) \rightarrow \mathcal{P}(Q)$. 
+           La función de transición toma un estado y un símbolo (que puede incluir la transición vacía o nula $\epsilon$) y devuelve un conjunto de posibles estados ($\mathcal{P}(Q)$ es el conjunto potencia de $Q$). Esto permite que el autómata se bifurque en múltiples caminos simultáneos o cambie de estado sin consumir ningún símbolo de entrada.  
+
+    * **Equivalencia entre AFD y AFN**   
+
+    Todo lenguaje que puede ser reconocido por un AFN también puede ser reconocido por un AFD, y viceversa. Esto significa que ambos modelos tienen exactamente el mismo poder computacional: ambos reconocen exclusivamente los lenguajes regulares (el Tipo 3 en la jerarquía de Chomsky).  
+
+    Aunque un AFN parece más poderoso porque permite múltiples decisiones y transiciones vacías, cualquier AFN puede transformarse en un AFD equivalente utilizando el algoritmo de construcción de subconjuntos. Este algoritmo simula el AFN creando nuevos estados en el AFD, donde cada nuevo estado representa un subconjunto de los estados en los que podría estar el AFN en un momento dado.  
+      
+    * **Tres problemas reales de aplicación de Expresiones Regulares**  
+
+       1. **Validación de entradas en desarrollo web**: Garantizar que los datos ingresados por un usuario cumplan con una estructura estricta antes de procesarlos. Se aplican desde el front-end (HTML/JavaScript) para verificar si una cadena coincide con el patrón exacto de una dirección de correo electrónico, un formato de fecha o los requisitos de complejidad de una contraseña.  
+       2. **Análisis léxico en compiladores**: Cuando se escribe código fuente en lenguajes como C o Java, el compilador utiliza expresiones regulares para leer la cadena de texto plano y agrupar los caracteres en tokens válidos (identificadores de variables, palabras clave reservadas, operadores de suma/resta), separando y descartando elementos como espacios en blanco o comentarios.  
+       3. **Análisis de logs y ciberseguridad**: Escanear archivos de registro (logs) masivos en servidores para identificar y extraer patrones anómalos. Se usan para filtrar miles de líneas de texto en segundos buscando firmas de ataques, extrayendo direcciones IP específicas que intentan accesos no autorizados, o identificando códigos de error críticos del sistema.
