@@ -10,19 +10,25 @@ Gabriel Hurtado Aviles
 22 de Septiembre 2026
 
 **INDICE**
-1. Ejercicio 1. Entorno de trabajo: control de versiones y contenedores.
-   * Parte A. Investigacion
-   * Parte B. Repositorio
-   * Parte C. Los tres entornos de Python
 
-2. Ejercicio 2. Investigacion: que es la Teoria de la Computacion.
+1. Automatas
 
-3. Ejercicio 3. Estado del arte: cinco articulos.
+2. Capturas
 
-4. Ejercicio 4. Automatas finitos en JFLAP.
+3. Docs
+   * Practica3
+   * 01-entorno
+   * 02-investigacion
+   * 03-estado-del-arte
+   * 04-jflap
+   * 05-aplicaciones
+   * bibliografia
 
-5. Ejercicio 5. Aplicacion con interfaz grafica.
-   * Operacion 1. Subcadenas, prefijos y  sufijos
-   * Operacion 2. Cerradura de Kleene y cerradura positiva
+4. Entorno
+
+5. Evidencias
+   * Ejercicio 1
+   * Ejercicio 5
+   * EvidenciaLista2
 
 *Este es el cambio con la branch para el Pull request*
