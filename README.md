@@ -7,28 +7,15 @@ Francisco Yiyari Garcia Velazquez
 Ing. en sistemas computacionales  
 Teoria De La Computacion  
 Gabriel Hurtado Aviles  
-22 de Septiembre 2026
+06 de Noviembre 2026
 
-**INDICE**
+**INDICE**  
+Practica 4. Uso de las expresiones Regulares y Extension de Software para Convertir Expresiones Regulares
 
-1. Automatas
+1. Ejercicio 1. Investigacion sobre Expresiones Regulares
 
-2. Capturas
+2. Ejercicio 2. De expresion regular a automata
 
-3. Docs
-   * Practica3
-   * 01-entorno
-   * 02-investigacion
-   * 03-estado-del-arte
-   * 04-jflap
-   * 05-aplicaciones
-   * bibliografia
+3. Ejercicio 3. De automata a expresion regular
 
-4. Entorno
-
-5. Evidencias
-   * Ejercicio 1
-   * Ejercicio 5
-   * EvidenciaLista2
-
-*Este es el cambio con la branch para el Pull request*
+4. Ejercicio 4. Aplicaciones: validadores
